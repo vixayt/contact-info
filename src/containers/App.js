@@ -14,7 +14,6 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.props)
     const { searchField, onSearchChange, users, isPending } = this.props;
     const filteredUsers = users.filter(user => {
       return user.username.toLowerCase().includes(searchField.toLowerCase())

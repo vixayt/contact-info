@@ -2,7 +2,9 @@
   "name": "contact-info",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://vixayt.github.io/contact-info",
   "dependencies": {
+    "gh-pages": "^2.0.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-redux": "^7.0.2",
@@ -13,8 +15,10 @@
     "tachyons": "^4.9.0"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "predeploy": "npm run build",
     "build": "react-scripts build",
+    "start": "react-scripts start",
+    "deploy": "gh-pages -d build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
