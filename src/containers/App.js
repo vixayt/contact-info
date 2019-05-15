@@ -1,40 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import CardList from '../components/CardList';
-import SearchBox from '../components/SearchBox';
-import Scroll from '../components/Scroll';
-import ErrorBoundry from '../components/ErrorBoundry';
 import { setSearchField, requestUsers } from '../actions';
-import Header from '../components/Header';
+import MainPage from '../components/MainPage';
 
 class App extends Component {
-  
-  componentDidMount() {
-    this.props.onRequestUsers();
-  }
-
   render() {
-    const { searchField, onSearchChange, users, isPending } = this.props;
-    const filteredUsers = users.filter(user => {
-      return user.username.toLowerCase().includes(searchField.toLowerCase())
-    })
-    return isPending ? 
-      <h1>Loading</h1>
-      :
-      (
-        <div className='tc'>
-        <Header />
-          <SearchBox 
-            searchfield={searchField}
-            searchChange={onSearchChange}
-          /> 
-          <Scroll>
-            <ErrorBoundry>
-              <CardList users={filteredUsers}/>
-            </ErrorBoundry>
-          </Scroll>
-        </div>
-      )
+    return (
+      <MainPage { ...this.props }/>
+    )
   }
 }
 
