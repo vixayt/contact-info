@@ -2,6 +2,7 @@ import React from 'react';
 import Card from './Card';
 
 const CardList = ({ users }) => {
+  console.log('u', users )
   return (
     <div>
       {users.map((user, i) => {

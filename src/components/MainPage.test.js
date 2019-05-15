@@ -53,6 +53,5 @@ it('should filter users correctly', () => {
     }
     const filteredUsers = []
     const wrapper3 = shallow(<MainPage { ... mockProps3 } />)
-    // expect(wrapper2.instance().filteredUsers()).toEqual([])
     expect(wrapper3.instance().filteredUsers()).toEqual(filteredUsers)
 })
